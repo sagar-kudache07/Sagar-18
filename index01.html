@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugatti | Ultimate Automotive Excellence</title>
+    <style>
+        /* ===== Global Styles ===== */
+        :root {
+            --bugatti-blue: #0038A8;
+            --bugatti-black: #000000;
+            --bugatti-gray: #1A1A1A;
+            --bugatti-light: #F8F8F8;
+            --bugatti-red: #E31937;
+            --gold-accent: #D4AF37;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--bugatti-light);
+            background-color: var(--bugatti-black);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        h1 { font-size: 4rem; }
+        h2 { font-size: 3rem; }
+        h3 { font-size: 2rem; }
+        h4 { font-size: 1.5rem; }
+
+        p {
+            color: rgba(248, 248, 248, 0.8);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--bugatti-blue);
+            color: var(--bugatti-light);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--bugatti-blue);
+            border-radius: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--bugatti-blue);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--bugatti-light);
+            color: var(--bugatti-light);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bugatti-light);
+            color: var(--bugatti-black);
+        }
+
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--bugatti-blue);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-center .section-title h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(248, 248, 248, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--bugatti-light);
+        }
+
+        .logo span {
+            color: var(--bugatti-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--bugatti-blue);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--bugatti-light);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin-bottom: 2rem;
+            line-height: 1;
+        }
+
+        .hero h1 span {
+            color: var(--bugatti-blue);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* ===== Models Section ===== */
+        .models {
+            background-color: var(--bugatti-gray);
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .model-card {
+            position: relative;
+            overflow: hidden;
+            height: 600px;
+            transition: var(--transition);
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .model-img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .model-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .model-card:hover .model-img img {
+            transform: scale(1.05);
+        }
+
+        .model-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+        }
+
+        .model-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--bugatti-light);
+        }
+
+        .model-info p {
+            color: rgba(248, 248, 248, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .model-specs {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .spec-icon {
+            color: var(--bugatti-blue);
+            font-size: 1.2rem;
+        }
+
+        /* ===== Performance Section ===== */
+        .performance {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+
+        .performance-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(248, 248, 248, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            border-color: var(--bugatti-blue);
+            transform: translateY(-10px);
+        }
+
+        .stat-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--bugatti-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Gallery Section ===== */
+        .gallery {
+            background-color: var(--bugatti-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 56, 168, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .zoom-icon {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact {
+            background-color: var(--bugatti-black);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--bugatti-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bugatti-blue);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background-color: var(--bugatti-gray);
+            padding: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba(248, 248, 248, 0.1);
+            border: 1px solid rgba(248, 248, 248, 0.2);
+            color: var(--bugatti-light);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--bugatti-blue);
+            background-color: rgba(0, 56, 168, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--bugatti-gray);
+            padding: 5rem 0 2rem;
+            border-top: 1px solid rgba(248, 248, 248, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--bugatti-light);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--bugatti-blue);
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(248, 248, 248, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--bugatti-blue);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(248, 248, 248, 0.1);
+            border-radius: 50%;
+            color: var(--bugatti-light);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--bugatti-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(248, 248, 248, 0.1);
+            color: rgba(248, 248, 248, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+            
+            .section {
+                padding: 6rem 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                min-height: 700px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background-color: var(--bugatti-black);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .performance-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">BUGATTI<span>.</span></a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#models">Models</a></li>
+                    <li><a href="#performance">Performance</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Beyond <span>Perfection</span></h1>
+                <p>Experience the pinnacle of automotive engineering with Bugatti's exclusive hyper sports cars. Unmatched performance, exquisite craftsmanship, and timeless design.</p>
+                <div class="hero-buttons">
+                    <a href="#models" class="btn">Explore Models</a>
+                    <a href="#contact" class="btn btn-outline">Book a Test Drive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="section models" id="models">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Masterpieces</h2>
+                <p>The most exclusive hyper sports cars in the world</p>
+            </div>
+            
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bugatti Chiron">
+                    </div>
+                    <div class="model-info">
+                        <h3>Chiron</h3>
+                        <p>The ultimate interpretation of a Bugatti hyper sports car with breathtaking performance.</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>1,500 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🏁</span>
+                                <span>420 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>2.4s 0-100</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn">Discover More</a>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bugatti Veyron">
+                    </div>
+                    <div class="model-info">
+                        <h3>Veyron</h3>
+                        <p>A legend reborn with unprecedented power and timeless design.</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>1,200 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🏁</span>
+                                <span>407 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>2.5s 0-100</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn">Discover More</a>
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <div class="model-img">
+                        <img src="https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bugatti Divo">
+                    </div>
+                    <div class="model-info">
+                        <h3>Divo</h3>
+                        <p>An automotive sculpture with extreme aerodynamic performance.</p>
+                        <div class="model-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">⚡</span>
+                                <span>1,500 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🏁</span>
+                                <span>380 km/h</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⏱️</span>
+                                <span>2.4s 0-100</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="section performance" id="performance">
+        <div class="container text-center">
+            <div class="section-title">
+                <h2>Unmatched Performance</h2>
+                <p>Engineering excellence that pushes boundaries</p>
+            </div>
+            
+            <div class="performance-stats">
+                <div class="stat-item">
+                    <div class="stat-value">1,500</div>
+                    <div class="stat-label">Horsepower</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-value">420</div>
+                    <div class="stat-label">Top Speed (km/h)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-value">2.4</div>
+                    <div class="stat-label">0-100 km/h (s)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-value">8.0</div>
+                    <div class="stat-label">L/100km</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Capturing the essence of Bugatti</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bugatti Interior">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bugatti Side View">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bugatti Front View">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bugatti Engine">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bugatti Dashboard">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bugatti Rear View">
+                    <div class="gallery-overlay">
+                        <span class="zoom-icon">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Experience Bugatti for yourself</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Bugatti Headquarters</h4>
+                            <p>Château Saint Jean<br>Molsheim, France</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p>info@bugatti.com<br>sales@bugatti.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p>+33 3 88 10 10 10<br>Mon-Fri, 9am-6pm CET</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="model">Model of Interest</label>
+                            <select id="model" class="form-control">
+                                <option value="">Select a model</option>
+                                <option value="chiron">Chiron</option>
+                                <option value="veyron">Veyron</option>
+                                <option value="divo">Divo</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your interest in Bugatti..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bugatti</h3>
+                    <p>Creating the world's most powerful, luxurious and exclusive hyper sports cars since 1909.</p>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                        <a href="#">yt</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Models</h3>
+                    <ul>
+                        <li><a href="#">Chiron</a></li>
+                        <li><a href="#">Veyron</a></li>
+                        <li><a href="#">Divo</a></li>
+                        <li><a href="#">Centodieci</a></li>
+                        <li><a href="#">La Voiture Noire</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">Heritage</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Imprint</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Bugatti Automobiles S.A.S. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('header').style.padding = '1rem 0';
+            } else {
+                document.querySelector('header').style.padding = '1.5rem 0';
+            }
+        });
+    </script>
+</body>
+</html>
